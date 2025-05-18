@@ -1,7 +1,5 @@
 package petklinik.common.vet
 
-import kotlinx.datetime.LocalDate
-import kotlinx.datetime.format
 import kotlinx.html.h2
 import kotlinx.html.id
 import kotlinx.html.table

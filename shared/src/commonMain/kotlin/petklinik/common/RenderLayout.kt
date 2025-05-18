@@ -1,31 +1,7 @@
 package petklinik.common
 
-import kotlinx.html.ButtonType
-import kotlinx.html.DIV
-import kotlinx.html.a
-import kotlinx.html.body
-import kotlinx.html.br
-import kotlinx.html.button
-import kotlinx.html.classes
-import kotlinx.html.div
-import kotlinx.html.h2
-import kotlinx.html.head
-import kotlinx.html.html
-import kotlinx.html.id
-import kotlinx.html.img
-import kotlinx.html.li
-import kotlinx.html.link
-import kotlinx.html.meta
-import kotlinx.html.nav
-import kotlinx.html.script
-import kotlinx.html.span
+import kotlinx.html.*
 import kotlinx.html.stream.createHTML
-import kotlinx.html.title
-import kotlinx.html.ul
-
-enum class Menu {
-    HOME, OWNERS, VETS
-}
 
 fun renderLayout(activeMenu: Menu, layoutContent: DIV.() -> Unit = {}) = createHTML().html {
     head {
@@ -132,15 +108,5 @@ fun renderLayout(activeMenu: Menu, layoutContent: DIV.() -> Unit = {}) = createH
             }
         }
 
-    }
-}
-
-fun renderWelcome() = renderLayout(Menu.HOME) {
-    h2 {
-        +"Welcome"
-    }
-    div(classes = "row") {
-        div(classes = "col-md-12")
-        img(classes = "img-responsive", src = "images/pets.png")
     }
 }
