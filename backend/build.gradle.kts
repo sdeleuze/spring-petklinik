@@ -28,6 +28,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.2")
     implementation("org.webjars:bootstrap:3.3.6")
     implementation("org.webjars:webjars-locator-lite")
+    implementation("io.konform:konform:0.11.0")
 
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.postgresql:postgresql")

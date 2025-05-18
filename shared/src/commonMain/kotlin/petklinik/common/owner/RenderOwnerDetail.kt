@@ -2,6 +2,7 @@ package petklinik.common.owner
 
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format
+import kotlinx.html.a
 import kotlinx.html.br
 import kotlinx.html.dd
 import kotlinx.html.dl
@@ -13,7 +14,6 @@ import kotlinx.html.th
 import kotlinx.html.thead
 import kotlinx.html.tr
 import petklinik.common.Menu
-import petklinik.common.owner.OwnerDto
 import petklinik.common.renderLayout
 
 fun renderOwnerDetail(owner: OwnerDto) = renderLayout(Menu.OWNERS) {
@@ -56,6 +56,14 @@ fun renderOwnerDetail(owner: OwnerDto) = renderLayout(Menu.OWNERS) {
                 }
             }
         }
+    }
+
+    a(href = "/owners/${owner.id}/edit", classes = "btn btn-default") {
+        +"Edit Owner"
+    }
+    +" "
+    a(href = "/owners/${owner.id}/pets/new", classes = "btn btn-default") {
+        +"Add New Pet"
     }
 
     br { }
