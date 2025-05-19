@@ -11,6 +11,7 @@ fun vetRouter(vetRepository: VetRepository, specialtyRepository: SpecialtyReposi
             .body(renderVets(vetRepository.findAll().map { it.toDto(specialtyRepository) }))
     }
     GET("/vets") {
-        ok().contentType(MediaType.APPLICATION_JSON).bodyWithType(vetRepository.findAll().map { it.toDto(specialtyRepository) })
+        ok().contentType(MediaType.APPLICATION_JSON)
+            .bodyWithType(vetRepository.findAll().map { it.toDto(specialtyRepository) })
     }
 }

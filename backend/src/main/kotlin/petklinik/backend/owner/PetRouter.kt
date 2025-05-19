@@ -16,6 +16,7 @@ fun petRouter(ownerRepository: OwnerRepository, petRepository: PetRepository, vi
         val owner = ownerRepository.findById(id)
         ok().contentType(MediaType.TEXT_HTML).body(renderPetForm(owner.toDto(petRepository, visitRepository), petRepository.findPetTypes().map { it.toDto() }))
     }
+
     POST("/owners/{id}/pets/new") {
         val id = it.pathVariable("id").toInt()
         val pet = Pet(

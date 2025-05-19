@@ -18,6 +18,7 @@ fun Owner.toDto(petRepository: PetRepository, visitRepository: VisitRepository) 
     this.address,
     this.city,
     this.telephone,
-    if (this.id != null) petRepository.findByOwnerId(this.id).map { it.toDto(petRepository, visitRepository) } else emptyList(),
+    if (this.id != null) petRepository.findByOwnerId(this.id)
+        .map { it.toDto(petRepository, visitRepository) } else emptyList(),
     this.id
 )
