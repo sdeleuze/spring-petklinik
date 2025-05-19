@@ -1,4 +1,4 @@
-package petklinik
+package petklinik.backend
 
 import org.springframework.http.MediaType
 import org.springframework.web.servlet.function.router

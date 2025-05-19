@@ -1,4 +1,4 @@
-package petklinik
+package petklinik.backend
 
 import org.springframework.beans.factory.BeanRegistrarDsl
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters

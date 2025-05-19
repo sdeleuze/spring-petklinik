@@ -1,15 +1,24 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+
 ext["spring-framework.version"] = "7.0.0-SNAPSHOT"
 
 plugins {
+    val springBootVersion = "4.0.0-SNAPSHOT"
     kotlin("jvm")
     kotlin("plugin.spring")
     kotlin("plugin.serialization")
-    id("org.springframework.boot") version "4.0.0-SNAPSHOT"
+    id("org.springframework.boot") version springBootVersion
+    id("org.springframework.boot.aot") version springBootVersion
     id("io.spring.dependency-management") version "1.1.7"
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(24)
+    }
+}
+
 repositories {
-    mavenLocal()
     mavenCentral()
     maven { url = uri("https://repo.spring.io/milestone") }
     maven { url = uri("https://repo.spring.io/snapshot") }
@@ -41,4 +50,9 @@ tasks {
             into("static")
         }
     }
+}
+
+tasks.named<BootBuildImage>("bootBuildImage") {
+    environment.put("BP_JVM_CDS_ENABLED", "true")
+    environment.put("BP_SPRING_AOT_ENABLED", "true")
 }

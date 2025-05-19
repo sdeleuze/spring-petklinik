@@ -5,4 +5,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-include("frontend", "backend", "shared")
+include("frontend", "backend", "shared", "ai")

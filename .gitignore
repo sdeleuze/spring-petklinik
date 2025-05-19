@@ -6,3 +6,4 @@ build/
 .kotlin/
 
 /frontend/node_modules/
+/kotlin-js-store/
