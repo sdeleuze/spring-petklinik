@@ -1,25 +1,23 @@
 package petklinik.backend.owner
 
-import kotlinx.datetime.toKotlinLocalDate
 import org.springframework.data.annotation.Id
-import org.springframework.format.annotation.DateTimeFormat
 import petklinik.backend.visit.VisitRepository
 import petklinik.backend.visit.toDto
 import petklinik.common.owner.PetDto
+import java.time.format.DateTimeFormatter
 
 data class Pet(
     val name: String,
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     val birthDate: java.time.LocalDate,
     val typeId: Int,
     val ownerId: Int,
     @Id
-    val id: Int?
+    val id: Int? = null
 )
 
 fun Pet.toDto(petRepository: PetRepository, visitRepository: VisitRepository) = PetDto(
     this.name,
-    this.birthDate.toKotlinLocalDate(),
+    this.birthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
     petRepository.findPetType(this.typeId).toDto(),
     if (this.id != null) visitRepository.findByPetId(this.id).map { it.toDto() } else null,
     this.id

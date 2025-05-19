@@ -20,7 +20,7 @@ interface PetRepository : Repository<Pet, Int> {
     fun findById(id: Int): Pet
 
     @Transactional
-    fun save(owner: Owner)
+    fun save(pet: Pet)
 
     @Transactional(readOnly = true)
     @Query("select * from pet where owner_id = :ownerId")

@@ -89,7 +89,7 @@ fun renderOwnerDetail(owner: OwnerDto) = renderLayout(Menu.OWNERS) {
                             +"Birth Date"
                         }
                         dd {
-                            +pet.birthDate.format(LocalDate.Formats.ISO)
+                            +pet.birthDate
                         }
                         dt {
                             +"Type"
