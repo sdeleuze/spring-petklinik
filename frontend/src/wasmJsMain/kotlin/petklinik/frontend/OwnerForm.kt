@@ -20,10 +20,10 @@ fun searchOwnerForm() {
                 response.text().then { data ->
                     val owners = Json.decodeFromString<List<OwnerDto>>(data.toString())
                     document.getElementById("owner-list")!!.innerHTML = renderOwnerList(owners)
-                    null
+                    null // https://github.com/Kotlin/kotlinx-browser/issues/18
                 }
             }
-            null
+            null // https://github.com/Kotlin/kotlinx-browser/issues/18
         }
     }
 }
