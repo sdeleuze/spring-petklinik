@@ -12,7 +12,7 @@ import petklinik.common.Menu
 import petklinik.common.renderLayout
 
 fun renderVets(vets : List<VetDto>) = renderLayout(Menu.VETS) {
-    h2 { +"Veterinarians aaaa" }
+    h2 { +"Veterinarians" }
 
     table(classes = "table table-striped") {
         id = "vets"
