@@ -15,7 +15,7 @@ class Beans : BeanRegistrarDsl({
     registerBean(::petRouter)
     registerBean(::vetRouter)
     registerBean(::ownerRouter)
-    registerBean<RestClient> {
+    registerBean {
         bean<RestClient.Builder>().baseUrl(imageGeneratorUrl).build()
     }
     registerBean {
