@@ -8,6 +8,7 @@ import kotlinx.html.dd
 import kotlinx.html.dl
 import kotlinx.html.dt
 import kotlinx.html.h2
+import kotlinx.html.img
 import kotlinx.html.table
 import kotlinx.html.td
 import kotlinx.html.th
@@ -77,6 +78,16 @@ fun renderOwnerDetail(owner: OwnerDto) = renderLayout(Menu.OWNERS) {
     table(classes = "table table-striped") {
         for(pet in owner.pets) {
             tr {
+                td {
+                    if (pet.imageUrl != null) {
+                        a(href=pet.imageUrl, target = "_blank") {
+                            img(src = pet.imageUrl) {
+                                width = "128px"
+                                height = "128px"
+                            }
+                        }
+                    }
+                }
                 td {
                     dl(classes = "dl-horizontal") {
                         dt {

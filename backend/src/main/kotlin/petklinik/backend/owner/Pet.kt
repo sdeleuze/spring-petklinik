@@ -11,6 +11,7 @@ data class Pet(
     val birthDate: java.time.LocalDate,
     val typeId: Int,
     val ownerId: Int,
+    val imageUrl: String? = null,
     @Id
     val id: Int? = null
 )
@@ -20,6 +21,7 @@ fun Pet.toDto(petRepository: PetRepository, visitRepository: VisitRepository) = 
     this.birthDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
     petRepository.findPetType(this.typeId).toDto(),
     if (this.id != null) visitRepository.findByPetId(this.id).map { it.toDto() } else null,
+    this.imageUrl,
     this.id
 
 )

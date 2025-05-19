@@ -12,6 +12,7 @@ data class PetDto(
     val birthDate: String,
     val type: PetTypeDto,
     val visits: List<VisitDto>? = null,
+    val imageUrl: String? = null,
     val id: Int? = null
 )
 
