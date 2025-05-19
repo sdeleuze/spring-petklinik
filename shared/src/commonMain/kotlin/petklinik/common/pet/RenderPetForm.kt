@@ -39,6 +39,7 @@ fun renderPetForm(owner: OwnerDto, types: List<PetTypeDto>) = renderLayout(Menu.
             textInputField("Name", "name")
             dateInputField("Birth Date", "birthDate")
             selectField("Type", "typeId", types.map { Pair(it.id!!, it.name) })
+            textInputField("Image Prompt", "imagePrompt")
         }
         div(classes = "form-group") {
             div(classes = "col-sm-offset-2 col-sm-10") {
