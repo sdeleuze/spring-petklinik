@@ -27,9 +27,9 @@ repositories {
 dependencies {
     implementation(project(":shared"))
 
-    implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
+    implementation("org.springframework.boot:spring-boot-starter-cache")
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.12.0")
@@ -39,7 +39,6 @@ dependencies {
     implementation("org.webjars:webjars-locator-lite")
     implementation("io.konform:konform:0.11.0")
 
-    runtimeOnly("com.h2database:h2")
     runtimeOnly("org.postgresql:postgresql")
 }
 
