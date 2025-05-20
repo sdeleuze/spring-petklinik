@@ -1,6 +1,5 @@
 package petklinik.backend.owner
 
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.MediaType
 import org.springframework.web.client.RestClient
 import org.springframework.web.client.toEntity
