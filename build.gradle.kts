@@ -6,7 +6,6 @@ allprojects {
 plugins {
     val kotlinVersion = "2.2.0-RC"
     kotlin("multiplatform") version kotlinVersion apply false
-    kotlin("js") version kotlinVersion apply false
     kotlin("jvm") version kotlinVersion apply false
     kotlin("plugin.spring") version kotlinVersion apply false
     kotlin("plugin.serialization") version kotlinVersion apply false
