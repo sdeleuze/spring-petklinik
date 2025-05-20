@@ -19,16 +19,20 @@ fun petRouter(ownerRepository: OwnerRepository,
               visitRepository: VisitRepository,
               imageGeneratorClient: RestClient
 ) = router {
+
     GET("/owners/{id}/pets/new") {
         val id = it.pathVariable("id").toInt()
         val owner = ownerRepository.findById(id)
-        ok().contentType(MediaType.TEXT_HTML).body(renderPetForm(owner.toDto(petRepository, visitRepository), petRepository.findPetTypes().map { it.toDto() }))
+        ok().contentType(MediaType.TEXT_HTML).body(renderPetForm(owner
+            .toDto(petRepository, visitRepository), petRepository.findPetTypes().map { it.toDto() }))
     }
 
     POST("/owners/{id}/pets/new") {
         val imagePrompt = it.paramOrNull("imagePrompt")
         val imageUrl = if (imagePrompt != null && !imagePrompt.isEmpty()) {
-            imageGeneratorClient.get().uri("/${UriUtils.encode(imagePrompt, StandardCharsets.UTF_8)}").retrieve().toEntity<String>().body
+            imageGeneratorClient.get()
+                .uri("/${UriUtils.encode(imagePrompt, StandardCharsets.UTF_8)}")
+                .retrieve().toEntity<String>().body
         }
         else null
         val id = it.pathVariable("id").toInt()
@@ -46,6 +50,7 @@ fun petRouter(ownerRepository: OwnerRepository,
         }
         petRepository.save(pet)
         val owner = ownerRepository.findById(id)
-        ok().contentType(MediaType.TEXT_HTML).body(renderOwnerDetail(owner.toDto(petRepository, visitRepository)))
+        ok().contentType(MediaType.TEXT_HTML).body(renderOwnerDetail(owner
+            .toDto(petRepository, visitRepository)))
     }
 }

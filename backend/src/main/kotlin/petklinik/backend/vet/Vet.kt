@@ -20,11 +20,3 @@ fun Vet.toDto(specialtyRepository: SpecialtyRepository) = VetDto(
         this.specialties.map { specialtyRepository.findById(it.specialty).toDto() }.toSet(),
         this.id
 )
-
-fun Vet.toDto(specialtyRepository: SpecialtyRepository, visitRepository: VisitRepository, petId: Int) = VetDto(
-    this.firstName,
-    this.lastName,
-    this.specialties.map { specialtyRepository.findById(it.specialty).toDto() }.toSet(),
-    this.id
-)
-

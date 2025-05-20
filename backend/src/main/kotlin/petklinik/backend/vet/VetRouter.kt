@@ -8,10 +8,12 @@ import petklinik.common.vet.renderVets
 fun vetRouter(vetRepository: VetRepository, specialtyRepository: SpecialtyRepository) = router {
     GET("/vets.html") {
         ok().contentType(MediaType.TEXT_HTML)
-            .body(renderVets(vetRepository.findAll().map { it.toDto(specialtyRepository) }))
+            .body(renderVets(vetRepository.findAll()
+                .map { it.toDto(specialtyRepository) }))
     }
     GET("/vets") {
         ok().contentType(MediaType.APPLICATION_JSON)
-            .bodyWithType(vetRepository.findAll().map { it.toDto(specialtyRepository) })
+            .bodyWithType(vetRepository.findAll()
+                .map { it.toDto(specialtyRepository) })
     }
 }

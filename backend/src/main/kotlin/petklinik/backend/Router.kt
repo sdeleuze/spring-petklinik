@@ -5,6 +5,7 @@ import org.springframework.web.servlet.function.router
 import petklinik.common.renderWelcome
 
 fun globalRouter() = router {
+
     GET("/") {
         ok().contentType(MediaType.TEXT_HTML).body(renderWelcome())
     }

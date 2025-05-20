@@ -35,9 +35,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.12.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.2")
-    implementation("org.webjars:bootstrap:3.3.6")
-    implementation("org.webjars:webjars-locator-lite")
     implementation("io.konform:konform:0.11.0")
+
+    implementation("org.webjars:webjars-locator-lite")
+    implementation("org.webjars:bootstrap:3.3.6")
 
     runtimeOnly("org.postgresql:postgresql")
 }
