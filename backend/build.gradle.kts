@@ -46,7 +46,8 @@ dependencies {
 tasks {
     processResources {
         dependsOn(":frontend:build")
-        from(project(":frontend").layout.buildDirectory.dir("dist/wasmJs/productionExecutable")) {
+        from(project(":frontend").layout.buildDirectory
+            .dir("dist/wasmJs/productionExecutable")) {
             into("static")
         }
     }
