@@ -1,8 +1,12 @@
 <img src="spring-petklinik.png" width="50%" height="50%">
 
-Spring Petklinik is a Kotlin fullstack variant of the typical [Spring Petclinic](https://github.com/spring-projects/spring-petclinic) example with Kotlin/Wasm for the frontend instead of JavaScript or TypeScript.
+Spring Petklinik is a Kotlin fullstack variant of the original [Spring Petclinic](https://github.com/spring-projects/spring-petclinic) example with [Kotlin/Wasm](https://kotlinlang.org/docs/wasm-overview.html) for the frontend instead of JavaScript or TypeScript. Most of the rendering is still done on server-side, but some dynamic parts are implemented on client-side (validation or dynamic update of some pages like the owner search result).
 
 This project leverages [Kotlin multiplatform support](https://kotlinlang.org/docs/multiplatform.html) to share code between Wasm and JVM using a shared module.
+
+It also leverages [programmatic bean registration](https://docs.spring.io/spring-framework/reference/7.0/core/beans/java/programmatic-bean-registration.html) with [`BeanRegistrarDsl`](https://docs.spring.io/spring-framework/docs/current-SNAPSHOT/kdoc-api/spring-beans/org.springframework.beans.factory/-bean-registrar-dsl/index.html) that will be introduced with Spring Framework 7 and Spring Boot 4.
+
+Java 24+ is required. 
 
 To run just the Petklinik application:
  - Run the `postgres` database from the `docker-compose.yml` file.
