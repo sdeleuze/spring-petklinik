@@ -21,9 +21,9 @@ kotlin {
         wasmJsMain {
             dependencies {
                 implementation(project(":shared"))
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-browser:0.3")
-                implementation("io.konform:konform:0.11.0")
+                implementation(libs.kotlinx.serialization.json)
+                implementation(libs.kotlinx.browser)
+                implementation(libs.konform)
             }
         }
     }

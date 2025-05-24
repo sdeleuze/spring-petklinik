@@ -31,9 +31,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-cache")
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.12.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
-    implementation("io.konform:konform:0.11.0")
+    implementation(libs.kotlinx.html.jvm)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.konform)
 
     implementation("org.webjars:webjars-locator-lite")
     implementation("org.webjars:bootstrap:3.3.6")

@@ -25,9 +25,9 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(kotlin("stdlib-common"))
-                implementation("org.jetbrains.kotlinx:kotlinx-html:0.12.0")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
-                implementation("io.konform:konform:0.11.0")
+                implementation(libs.kotlinx.html.common)
+                implementation(libs.kotlinx.serialization.json)
+                implementation(libs.konform)
             }
         }
         commonTest {
