@@ -1,5 +1,5 @@
 plugins {
-    val springBootVersion = "3.5.0-RC1"
+    val springBootVersion = "3.5.0"
     kotlin("jvm")
     kotlin("plugin.spring")
     id("org.springframework.boot") version springBootVersion
@@ -14,7 +14,6 @@ java {
 }
 
 repositories {
-    maven { url = uri("https://repo.spring.io/milestone") }
     mavenCentral()
 }
 
