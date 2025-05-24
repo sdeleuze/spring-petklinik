@@ -2,6 +2,7 @@ package petklinik.frontend
 
 import kotlinx.browser.document
 import kotlinx.browser.window
+import org.w3c.dom.HTMLButtonElement
 import org.w3c.dom.HTMLFormElement
 import org.w3c.xhr.FormData
 import petklinik.common.pet.PetDto
@@ -26,5 +27,6 @@ fun addPetForm() {
             window.alert(stringBuilder.toString())
             event.preventDefault()
         }
+        (document.getElementById("add-pet-button") as HTMLButtonElement).disabled = true
     }
 }

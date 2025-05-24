@@ -43,6 +43,7 @@ fun renderPetForm(owner: OwnerDto, types: List<PetTypeDto>) = renderLayout(Menu.
         div(classes = "form-group") {
             div(classes = "col-sm-offset-2 col-sm-10") {
                 button(classes = "btn btn-default", type = ButtonType.submit) {
+                    id = "add-pet-button"
                     +"Add Pet"
                 }
             }
