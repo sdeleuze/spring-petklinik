@@ -1,7 +1,5 @@
 package petklinik.common.owner
 
-import kotlinx.datetime.LocalDate
-import kotlinx.datetime.format
 import kotlinx.html.a
 import kotlinx.html.br
 import kotlinx.html.dd
@@ -124,7 +122,7 @@ fun renderOwnerDetail(owner: OwnerDto) = renderLayout(Menu.OWNERS) {
                             for (visit in pet.visits!!) {
                                 tr {
                                     td {
-                                        +visit.visitDate.format(LocalDate.Formats.ISO)
+                                        +visit.visitDate
                                     }
                                     td {
                                         +visit.description
