@@ -1,10 +1,12 @@
+import org.gradle.kotlin.dsl.named
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+
 plugins {
     val springBootVersion = "3.5.0"
     kotlin("jvm")
     kotlin("plugin.spring")
     id("org.springframework.boot") version springBootVersion
     id("io.spring.dependency-management") version "1.1.7"
-    id("org.graalvm.buildtools.native") version "0.10.6"
 }
 
 java {
@@ -44,3 +46,8 @@ kotlin {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.named<BootBuildImage>("bootBuildImage") {
+    environment.put("BP_JVM_CDS_ENABLED", "true")
+}
+
