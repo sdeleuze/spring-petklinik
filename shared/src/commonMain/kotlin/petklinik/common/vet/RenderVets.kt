@@ -38,7 +38,7 @@ fun renderVets(vets : List<VetDto>) = renderLayout(Menu.VETS) {
                         }
                         else {
                             for (specialty in vet.specialties) {
-                                +"specialty: ${specialty.name} "
+                                +"${specialty.name} "
                             }
                         }
                     }
