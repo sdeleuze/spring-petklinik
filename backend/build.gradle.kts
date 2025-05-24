@@ -8,7 +8,6 @@ plugins {
     kotlin("plugin.spring")
     kotlin("plugin.serialization")
     id("org.springframework.boot") version springBootVersion
-    id("org.springframework.boot.aot") version springBootVersion
     id("io.spring.dependency-management") version "1.1.7"
 }
 
@@ -55,5 +54,4 @@ tasks {
 
 tasks.named<BootBuildImage>("bootBuildImage") {
     environment.put("BP_JVM_CDS_ENABLED", "true")
-    environment.put("BP_SPRING_AOT_ENABLED", "true")
 }

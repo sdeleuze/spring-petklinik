@@ -5,6 +5,7 @@ import io.konform.validation.constraints.maxLength
 import io.konform.validation.constraints.minLength
 import io.konform.validation.constraints.notBlank
 import kotlinx.serialization.Serializable
+import petklinik.common.pet.PetDto
 
 @Serializable
 data class OwnerDto(val firstName: String,

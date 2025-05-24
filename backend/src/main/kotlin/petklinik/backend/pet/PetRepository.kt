@@ -1,4 +1,4 @@
-package petklinik.backend.owner
+package petklinik.backend.pet
 
 import org.springframework.cache.annotation.Cacheable
 import org.springframework.data.jdbc.repository.query.Query
@@ -20,7 +20,7 @@ interface PetRepository : Repository<Pet, Int> {
     fun findById(id: Int): Pet
 
     @Transactional
-    fun save(pet: Pet)
+    fun save(pet: Pet): Pet
 
     @Transactional(readOnly = true)
     @Query("select * from pet where owner_id = :ownerId")

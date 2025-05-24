@@ -1,7 +1,7 @@
-package petklinik.backend.owner
+package petklinik.backend.pet
 
 import org.springframework.data.annotation.Id
-import petklinik.common.owner.PetTypeDto
+import petklinik.common.pet.PetTypeDto
 
 data class PetType(
     val name: String,

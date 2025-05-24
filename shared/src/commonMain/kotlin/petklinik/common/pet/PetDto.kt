@@ -1,4 +1,4 @@
-package petklinik.common.owner
+package petklinik.common.pet
 
 import io.konform.validation.Validation
 import io.konform.validation.constraints.notBlank
@@ -12,7 +12,7 @@ data class PetDto(
     val birthDate: String,
     val type: PetTypeDto,
     val visits: List<VisitDto>? = null,
-    val imageUrl: String? = null,
+    val imageId: Int? = null,
     val id: Int? = null
 )
 

@@ -1,4 +1,4 @@
-package petklinik.common.owner
+package petklinik.common.pet
 
 import kotlinx.serialization.Serializable
 

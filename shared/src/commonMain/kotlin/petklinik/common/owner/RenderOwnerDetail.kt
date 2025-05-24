@@ -79,9 +79,9 @@ fun renderOwnerDetail(owner: OwnerDto) = renderLayout(Menu.OWNERS) {
         for(pet in owner.pets) {
             tr {
                 td {
-                    if (pet.imageUrl != null) {
-                        a(href=pet.imageUrl, target = "_blank") {
-                            img(src = pet.imageUrl) {
+                    if (pet.imageId != null) {
+                        a(href="/pets/images/${pet.imageId}", target = "_blank") {
+                            img(src = "/pets/images/${pet.imageId}") {
                                 width = "128px"
                                 height = "128px"
                             }

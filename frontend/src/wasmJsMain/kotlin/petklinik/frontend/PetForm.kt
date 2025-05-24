@@ -4,9 +4,9 @@ import kotlinx.browser.document
 import kotlinx.browser.window
 import org.w3c.dom.HTMLFormElement
 import org.w3c.xhr.FormData
-import petklinik.common.owner.PetDto
-import petklinik.common.owner.PetTypeDto
-import petklinik.common.owner.validatePet
+import petklinik.common.pet.PetDto
+import petklinik.common.pet.PetTypeDto
+import petklinik.common.pet.validatePet
 
 fun addPetForm() {
     document.getElementById("pet-form")?.addEventListener("submit") { event ->

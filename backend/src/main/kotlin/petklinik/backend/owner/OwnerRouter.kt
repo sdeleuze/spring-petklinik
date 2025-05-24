@@ -4,6 +4,7 @@ import org.springframework.http.MediaType
 import org.springframework.web.servlet.function.bodyWithType
 import org.springframework.web.servlet.function.paramOrNull
 import org.springframework.web.servlet.function.router
+import petklinik.backend.pet.PetRepository
 import petklinik.backend.visit.VisitRepository
 import petklinik.common.owner.renderFindOwners
 import petklinik.common.owner.renderOwnerDetail

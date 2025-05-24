@@ -14,7 +14,6 @@ import petklinik.common.fragment.dateInputField
 import petklinik.common.fragment.selectField
 import petklinik.common.fragment.textInputField
 import petklinik.common.owner.OwnerDto
-import petklinik.common.owner.PetTypeDto
 import petklinik.common.renderLayout
 
 fun renderPetForm(owner: OwnerDto, types: List<PetTypeDto>) = renderLayout(Menu.OWNERS) {
