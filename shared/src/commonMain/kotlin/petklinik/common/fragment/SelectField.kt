@@ -12,9 +12,9 @@ fun DIV.selectField(label: String, name: String, items: List<Pair<Int, String>>)
             +label
         }
         div(classes = "col-sm-10") {
-            select {
+            select(classes = "form-control") {
                 for (item in items) {
-                    this.name = "typeId"
+                    this.name = name
                     option {
                         value = item.first.toString()
                         this.label = item.second
