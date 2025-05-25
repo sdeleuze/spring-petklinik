@@ -42,12 +42,7 @@ fun editOwnerForm() {
         )
         val validation = validateOwner(owner)
         if (!validation.isValid) {
-            val stringBuilder = StringBuilder()
-            stringBuilder.append("${validation.errors.size} errors:\n")
-            for (error in validation.errors) {
-                stringBuilder.append("${error.dataPath.substring(1).replaceFirstChar { it.titlecase() }}: ${error.message}\n")
-            }
-            window.alert(stringBuilder.toString())
+            displayErrors(validation)
             event.preventDefault()
         }
     }
