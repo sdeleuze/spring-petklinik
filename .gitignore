@@ -7,3 +7,4 @@ build/
 
 /frontend/node_modules/
 /kotlin-js-store/
+.DS_Store
