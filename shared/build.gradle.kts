@@ -32,7 +32,7 @@ kotlin {
         }
         commonTest {
             dependencies {
-                implementation("org.jetbrains.kotlin:kotlin-test")
+                implementation(kotlin("test"))
             }
         }
         jvmMain {
