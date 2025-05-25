@@ -2,7 +2,6 @@ package petklinik.backend.vet
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.MappedCollection
-import petklinik.backend.visit.VisitRepository
 import petklinik.common.vet.VetDto
 
 data class Vet(

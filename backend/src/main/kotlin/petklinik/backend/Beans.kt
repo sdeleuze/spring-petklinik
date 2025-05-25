@@ -15,8 +15,8 @@ class Beans : BeanRegistrarDsl({
     // TODO Allow references to env from within registerBean
     val imageGeneratorUrl = env.getRequiredProperty("image.generator.url")
     registerBean {
-        bean<RestClient.Builder>().baseUrl(imageGeneratorUrl).build()
-        PetManagement(bean(), bean(), bean(), bean<RestClient.Builder>().baseUrl(imageGeneratorUrl).build())
+        val builder = bean<RestClient.Builder>().baseUrl(imageGeneratorUrl).build()
+        PetManagement(bean(), bean(), bean(), builder)
     }
 
     // Router
