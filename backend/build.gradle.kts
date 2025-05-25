@@ -35,9 +35,6 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.konform)
 
-    implementation("org.webjars:webjars-locator-lite")
-    implementation("org.webjars:bootstrap:3.3.6")
-
     runtimeOnly("org.postgresql:postgresql")
 }
 
