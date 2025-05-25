@@ -46,10 +46,10 @@ kotlin {
                 implementation(kotlin("test-junit"))
             }
         }
+        wasmJsTest {
+            dependencies {
+                implementation(libs.kotlinx.browser)
+            }
+        }
     }
-}
-
-// IllegalStateException: IrClassSymbolImpl is unbound. Signature: org.w3c.dom.events/Event|null[0]
-tasks.named("compileTestDevelopmentExecutableKotlinWasmJs") {
-    enabled = false
 }
