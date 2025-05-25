@@ -15,6 +15,6 @@ class TemplatesTests {
         assertContains(output, "<td>James Carter</td>")
         assertContains(output, "<td>none</td>")
         assertContains(output, "<td>Helen Leary</td>")
-        assertContains(output, "<td>specialty: radiology </td>")
+        assertContains(output, "<td>radiology </td>")
     }
 }
