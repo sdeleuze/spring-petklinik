@@ -36,6 +36,8 @@ dependencies {
     implementation(libs.konform)
 
     runtimeOnly("org.postgresql:postgresql")
+
+    developmentOnly("org.springframework.boot:spring-boot-docker-compose")
 }
 
 tasks {

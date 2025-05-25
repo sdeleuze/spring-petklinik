@@ -9,16 +9,18 @@ services:
       - POSTGRES_DB=petclinic
     volumes:
       - ./sql:/docker-entrypoint-initdb.d/
+    profiles: [db, all]
   petklinik:
     image: backend:1.0.0-SNAPSHOT
     ports:
       - "8080:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres/petclinic
       - IMAGE_GENERATOR_URL=http://ai:8081/generate
+    profiles: [all]
   ai:
     image: ai:1.0.0-SNAPSHOT
     ports:
       - "8081:8081"
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+    profiles: [all]

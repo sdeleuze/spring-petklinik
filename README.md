@@ -10,13 +10,12 @@ This project requires Java 24+ and leverages:
  - [kotlinx.html](https://github.com/Kotlin/kotlinx.html) for template rendering (hopefully later replaced by a first class [Compose HTML](https://github.com/JetBrains/compose-multiplatform/blob/master/tutorials/HTML/Building_UI/README.md) support)
  - Virtual Threads
 
-To run just the Petklinik application:
- - Run `docker-compose up postgres`
- - Run `./gradlew bootRun`
+To run just the Petklinik application in development mode:
+ - Run `./gradlew :backend:bootRun`
  - Go to `http://localhost:8080`
 
-To run both Petklinik and the AI image generation service:
+To run all services in production mode:
  - Run `./gradlew clean build bootBuildImage`
  - Define an `OPENAI_API_KEY` environment variable
- - Run `docker-compose up`
+ - Run `docker compose --profile all up`
  - Go to `http://localhost:8080`
