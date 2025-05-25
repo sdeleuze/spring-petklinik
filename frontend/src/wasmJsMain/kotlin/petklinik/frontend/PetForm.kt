@@ -27,6 +27,8 @@ fun addPetForm() {
             window.alert(stringBuilder.toString())
             event.preventDefault()
         }
-        (document.getElementById("add-pet-button") as HTMLButtonElement).disabled = true
+        else {
+            (document.getElementById("add-pet-button") as HTMLButtonElement).disabled = true
+        }
     }
 }
