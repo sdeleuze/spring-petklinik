@@ -12,6 +12,7 @@ import petklinik.backend.pet.petRouter
 import petklinik.backend.vet.vetRouter
 
 class Beans : BeanRegistrarDsl({
+    // PetManagement bean with a custom RestClient
     registerBean {
         val builder = bean<RestClient.Builder>()
             .baseUrl(env.getRequiredProperty("image.generator.url"))
@@ -19,17 +20,19 @@ class Beans : BeanRegistrarDsl({
         PetManagement(bean(), bean(), bean(), builder)
     }
 
-    // Router
+    // Router with automatic wiring by type of the function parameters
     registerBean(::globalRouter)
     registerBean(::petRouter)
     registerBean(::vetRouter)
     registerBean(::ownerRouter)
 
-    // Spring Boot configuration
+    // Customization of Spring Boot configuration to use only specific HTTP converters
     registerBean {
         HttpMessageConverters(false, listOf(
             ByteArrayHttpMessageConverter(),
             StringHttpMessageConverter(),
             KotlinSerializationJsonHttpMessageConverter()))
     }
+
+    // Spring Data repositories are scanned automatically so no need to declare them
 })
