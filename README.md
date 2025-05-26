@@ -14,12 +14,13 @@ Key characteristics:
  - [kotlinx.html](https://github.com/Kotlin/kotlinx.html) for template rendering (hopefully later replaced by a first class [Compose HTML](https://github.com/JetBrains/compose-multiplatform/blob/master/tutorials/HTML/Building_UI/README.md) support)
  - Virtual Threads
  - OpenAI interactions implemented in a distinct application based on Spring AI
- - CDS Buildpack support used to speedup containers startup 
+ - [CDS Buildpack support](https://docs.spring.io/spring-boot/how-to/class-data-sharing.html) used to speedup containers startup 
 
 ## Requirements
 
-  - Java 24+
-  - Docker
+  - Java 24+ (can be installed via [SDKMAN!](https://sdkman.io/))
+  - [Docker](https://www.docker.com/)
+  - Optional: an [OpenAI](https://openai.com/) key for the image generation service
 
 ## Getting started
 
