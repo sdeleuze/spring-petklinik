@@ -12,10 +12,10 @@ import petklinik.backend.pet.petRouter
 import petklinik.backend.vet.vetRouter
 
 class Beans : BeanRegistrarDsl({
-    // TODO Allow references to env from within registerBean
-    val imageGeneratorUrl = env.getRequiredProperty("image.generator.url")
     registerBean {
-        val builder = bean<RestClient.Builder>().baseUrl(imageGeneratorUrl).build()
+        val builder = bean<RestClient.Builder>()
+            .baseUrl(env.getRequiredProperty("image.generator.url"))
+            .build()
         PetManagement(bean(), bean(), bean(), builder)
     }
 
