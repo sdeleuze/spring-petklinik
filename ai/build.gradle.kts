@@ -2,7 +2,7 @@ import org.gradle.kotlin.dsl.named
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
-    val springBootVersion = "3.5.0"
+    val springBootVersion = "3.5.3"
     kotlin("jvm")
     kotlin("plugin.spring")
     id("org.springframework.boot") version springBootVersion
