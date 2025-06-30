@@ -50,7 +50,7 @@ tasks.withType<Test> {
 
 tasks {
     processResources {
-        dependsOn(":frontend:build")
+        dependsOn(":frontend:wasmJsBrowserDistribution")
         from(project(":frontend").layout.buildDirectory
             .dir("dist/wasmJs/productionExecutable")) {
             into("static")
