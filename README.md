@@ -1,6 +1,6 @@
 <img src="spring-petklinik.png" width="50%" height="50%">
 
-Spring Petklinik is a Kotlin fullstack variant of the original [Spring Petclinic](https://github.com/spring-projects/spring-petclinic) with Kotlin.
+Spring Petklinik is a Kotlin fullstack variant of the original [Spring Petclinic](https://github.com/spring-projects/spring-petclinic).
 
 ## Architecture
 
