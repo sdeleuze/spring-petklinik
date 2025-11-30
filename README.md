@@ -10,7 +10,7 @@ Key characteristics:
  - [Kotlin/Wasm](https://kotlinlang.org/docs/wasm-overview.html) for the frontend instead of JavaScript or TypeScript
  - Most of the rendering is still done on server-side, but some dynamic parts are implemented on client-side (validation or dynamic update of some pages like the owner search result)
  - [Kotlin multiplatform support](https://kotlinlang.org/docs/multiplatform.html) to share code between Kotlin/Wasm and Kotlin/JVM using a shared module
- - Preview of Spring Boot 4 and Spring Framework 7 with its new [bean registration DSL](https://docs.spring.io/spring-framework/reference/7.0/core/beans/java/programmatic-bean-registration.html) combined with the [web router DSL](https://docs.spring.io/spring-framework/reference/7.0-SNAPSHOT/languages/kotlin/web.html#router-dsl)
+ - Spring Boot 4 and Spring Framework 7 with its new [bean registration DSL](https://docs.spring.io/spring-framework/reference/core/beans/java/programmatic-bean-registration.html) combined with the [web router DSL](https://docs.spring.io/spring-framework/reference/languages/kotlin/web.html#router-dsl)
  - [kotlinx.html](https://github.com/Kotlin/kotlinx.html) for type-safe template rendering (hopefully later replaced by a first class [Compose HTML](https://github.com/JetBrains/compose-multiplatform/blob/master/tutorials/HTML/Building_UI/README.md) support)
  - Virtual Threads
  - OpenAI interactions implemented in a distinct application based on Spring AI
@@ -18,7 +18,7 @@ Key characteristics:
 
 ## Requirements
 
-  - Java 24+ (can be installed via [SDKMAN!](https://sdkman.io/))
+  - JDK 17+ (can be installed via [SDKMAN!](https://sdkman.io/))
   - [Docker](https://www.docker.com/)
   - Optional: an [OpenAI](https://openai.com/) key for the image generation service
 

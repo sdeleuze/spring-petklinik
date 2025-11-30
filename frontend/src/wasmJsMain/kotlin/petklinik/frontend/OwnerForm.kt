@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalWasmJsInterop::class)
+
 package petklinik.frontend
 
 import kotlinx.browser.document

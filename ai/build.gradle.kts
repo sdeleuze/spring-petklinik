@@ -2,7 +2,7 @@ import org.gradle.kotlin.dsl.named
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
-    val springBootVersion = "3.5.3"
+    val springBootVersion = "3.5.8"
     kotlin("jvm")
     kotlin("plugin.spring")
     id("org.springframework.boot") version springBootVersion
@@ -11,7 +11,7 @@ plugins {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(24)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -32,11 +32,12 @@ dependencies {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.ai:spring-ai-bom:1.0.0")
+        mavenBom("org.springframework.ai:spring-ai-bom:1.1.0")
     }
 }
 
 kotlin {
+    jvmToolchain(17)
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
@@ -48,5 +49,6 @@ tasks.withType<Test> {
 
 tasks.named<BootBuildImage>("bootBuildImage") {
     environment.put("BP_JVM_CDS_ENABLED", "true")
+    environment.put("BP_JVM_VERSION", "25")
 }
 

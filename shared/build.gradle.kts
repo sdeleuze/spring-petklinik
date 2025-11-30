@@ -12,6 +12,7 @@ repositories {
 }
 
 kotlin {
+    jvmToolchain(17)
     jvm()
     wasmJs {
         browser {

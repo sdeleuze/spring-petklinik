@@ -1,9 +1,7 @@
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
-ext["spring-framework.version"] = "7.0.0-SNAPSHOT"
-
 plugins {
-    val springBootVersion = "4.0.0-SNAPSHOT"
+    val springBootVersion = "4.0.0"
     kotlin("jvm")
     kotlin("plugin.spring")
     kotlin("plugin.serialization")
@@ -13,7 +11,7 @@ plugins {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(24)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -26,14 +24,16 @@ repositories {
 dependencies {
     implementation(project(":shared"))
 
-    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-webmvc") {
+        exclude("org.springframework.boot:spring-boot-starter-jackson")
+    }
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.boot:spring-boot-restclient")
+    implementation("org.springframework.boot:spring-boot-kotlinx-serialization-json")
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation(libs.kotlinx.html.jvm)
-    implementation(libs.kotlinx.serialization.json)
     implementation(libs.konform)
 
     runtimeOnly("org.postgresql:postgresql")
@@ -61,4 +61,9 @@ tasks {
 
 tasks.named<BootBuildImage>("bootBuildImage") {
     environment.put("BP_JVM_CDS_ENABLED", "true")
+    environment.put("BP_JVM_VERSION", "25")
+}
+
+kotlin {
+    jvmToolchain(17)
 }
