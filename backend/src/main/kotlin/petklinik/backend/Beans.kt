@@ -22,7 +22,7 @@ class Beans : BeanRegistrarDsl({
         PetManagement(bean<PetRepository>(), bean<PetImageRepository>(), bean<VisitRepository>(), builder)
     }
 
-    // Router with automatic wiring by type of the function parameters
+    // Routers
     registerBean { globalRouter() }
     registerBean { petRouter(bean<OwnerRepository>(), bean<PetRepository>(), bean<VisitRepository>(), bean<PetManagement>()) }
     registerBean { vetRouter(bean<VetRepository>(), bean<SpecialtyRepository>()) }
