@@ -2,7 +2,7 @@ import org.gradle.kotlin.dsl.named
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
-    val springBootVersion = "3.5.8"
+    val springBootVersion = "4.0.1"
     kotlin("jvm")
     kotlin("plugin.spring")
     id("org.springframework.boot") version springBootVersion
@@ -32,7 +32,7 @@ dependencies {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.ai:spring-ai-bom:1.1.0")
+        mavenBom("org.springframework.ai:spring-ai-bom:2.0.0-M1")
     }
 }
 

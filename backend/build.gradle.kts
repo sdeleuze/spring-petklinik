@@ -1,7 +1,7 @@
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
-    val springBootVersion = "4.0.0"
+    val springBootVersion = "4.0.1"
     kotlin("jvm")
     kotlin("plugin.spring")
     kotlin("plugin.serialization")
@@ -17,8 +17,6 @@ java {
 
 repositories {
     mavenCentral()
-    maven { url = uri("https://repo.spring.io/milestone") }
-    maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
 dependencies {
